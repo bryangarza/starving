@@ -18,6 +18,9 @@ app.get('/', function(req, res) {
   gh.user.getFollowingFromUser({
     user: 'bryangarza'
   }, function(err, ghres) {
+    if (err) {
+      console.log(err.stack)
+    }
     res.json(JSON.stringify(ghres))
   })
 })
