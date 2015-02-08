@@ -1,0 +1,32 @@
+{
+  "name": "starving",
+  "version": "1.0.0",
+  "description": "github stars viewer",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bryangarza/starving.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "git"
+  ],
+  "author": "Bryan Garza",
+  "license": "GPLv3",
+  "dependencies": {
+    "express": "^4.11.2",
+    "morgan": "^1.5.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "quotes": [2, "single"],
+      "semi": [2, "never"]
+    }
+  }
+}
