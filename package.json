@@ -5,10 +5,10 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/bryangarza/starving.git"
+    "url": "https://github.com/bryangarza/starving.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint *.js"
   },
   "keywords": [
     "github",
