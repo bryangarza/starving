@@ -3,6 +3,10 @@ var path = require('path')
 var express = require('express')
 var app = express()
 var port = process.env.PORT || 8080
+var GithubApi = require('github')
+var gh = new GithubApi({
+  version: '3.0.0'
+})
 
 var morgan = require('morgan')
 var pub = path.join(__dirname, '/public')
@@ -11,7 +15,11 @@ app.use(express.static(pub))
 app.use(morgan('dev'))
 
 app.get('/', function(req, res) {
-  res.json({ user: 'bryangarza' })
+  gh.user.getFollowingFromUser({
+    user: 'bryangarza'
+  }, function(err, ghres) {
+    res.json(JSON.stringify(ghres))
+  })
 })
 
 var server = app.listen(port, function() {
