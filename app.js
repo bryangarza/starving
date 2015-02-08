@@ -14,10 +14,9 @@ var pub = path.join(__dirname, '/public')
 app.use(express.static(pub))
 app.use(morgan('dev'))
 
-app.get('/', function(req, res) {
-  gh.user.getFollowingFromUser({
-    user: 'bryangarza'
-  }, function(err, ghres) {
+app.get('/user/:id/following', function(req, res) {
+  /* gh.user.getFollowingFromUser({ */
+  gh.misc.rateLimit({}, function(err, ghres) {
     if (err) {
       console.log(err.stack)
     }
