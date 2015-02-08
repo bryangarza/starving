@@ -19,14 +19,5 @@
   "dependencies": {
     "express": "^4.11.2",
     "morgan": "^1.5.1"
-  },
-  "eslintConfig": {
-    "env": {
-      "node": true
-    },
-    "rules": {
-      "quotes": [2, "single"],
-      "semi": [2, "never"]
-    }
   }
 }
