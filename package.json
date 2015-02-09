@@ -19,6 +19,7 @@
   "dependencies": {
     "express": "^4.11.2",
     "github": "^0.2.3",
+    "jade": "^1.9.2",
     "morgan": "^1.5.1"
   }
 }
