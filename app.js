@@ -14,10 +14,8 @@ var pub = path.join(__dirname, '/public');
 app.use(express.static(pub));
 app.use(morgan('dev'));
 
-app.get('/json/user/:id/following', function(req, res) {
-  gh.user.getFollowingFromUser({
-    user: req.params.id
-  }, function(err, ghres) {
+app.get('/:user', function(req, res) {
+  gh.repos.getStarredFromUser({ user: req.params.user}, function(err, ghres) {
     if (err) {
       console.log(err.stack);
     }
@@ -25,10 +23,8 @@ app.get('/json/user/:id/following', function(req, res) {
   });
 });
 
-app.get('/json/user/:id/stars', function(req, res) {
-  gh.repos.getStarredFromUser({
-    user: req.params.id
-  }, function(err, ghres) {
+app.get('/:user/f', function(req, res) {
+  gh.user.getFollowingFromUser({ user: req.params.user}, function(err, ghres) {
     if (err) {
       console.log(err.stack);
     }
