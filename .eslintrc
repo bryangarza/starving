@@ -4,6 +4,7 @@
   },
   "rules": {
     "quotes": [2, "single"],
-    "semi": [2, "never"]
+    "semi": [2, "never"],
+    "curly": [2, "multi"]
   }
 }
