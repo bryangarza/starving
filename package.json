@@ -8,7 +8,7 @@
     "url": "https://github.com/bryangarza/starving.git"
   },
   "scripts": {
-    "test": "eslint *.js"
+    "test": "eslint *.js mock/*.js"
   },
   "keywords": [
     "github",
