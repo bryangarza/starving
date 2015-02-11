@@ -1,3 +1,6 @@
 extends index
 block content
-  =user
+  ul
+    each star in stars
+      li: a(href=star.html_url)
+          = star.name

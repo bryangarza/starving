@@ -20,13 +20,14 @@ if (app.get('env') === 'development') {
   app.locals.pretty = true
 }
 
-app.get('/:user', function(req, res) {
+// REMINDER: change this route back to /:user
+app.get('/', function(req, res) {
   // Remember that the actual call includes `repos`
   // TODO: other routes also need JSON.stringify() wrapping ghres
   // gh.repos.getStarredFromUser({ user: req.params.user}, function(err, ghres) {
   gh.getStarredFromUser({ user: req.params.user}, function(err, ghres) {
     if (err) console.log(err.stack)
-    res.render('starred', { user: JSON.stringify(ghres) })
+    res.render('starred', { stars: ghres })
   })
 })
 
@@ -60,7 +61,5 @@ app.get('/:user', function(req, res) {
 // })
 
 var server = app.listen(port, function() {
-  console.log('Listening at http://%s:%s',
-              server.address().address,
-              server.address().port)
+  console.log('Listening at port', port)
 })
