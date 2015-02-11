@@ -20,9 +20,8 @@ if (app.get('env') === 'development') {
   app.locals.pretty = true
 }
 
-// REMINDER: change this route back to /:user
+// Reminder: change this route back to /:user
 app.get('/', function(req, res) {
-  // Remember that the actual call is gh.repos.getStarredFromUser()
   // gh.repos.getStarredFromUser({ user: req.params.user}, function(err, ghres) {
   gh.getStarredFromUser({ user: req.params.user}, function(err, ghres) {
     if (err) console.log(err.stack)
