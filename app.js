@@ -22,8 +22,7 @@ if (app.get('env') === 'development') {
 
 // REMINDER: change this route back to /:user
 app.get('/', function(req, res) {
-  // Remember that the actual call includes `repos`
-  // TODO: other routes also need JSON.stringify() wrapping ghres
+  // Remember that the actual call is gh.repos.getStarredFromUser()
   // gh.repos.getStarredFromUser({ user: req.params.user}, function(err, ghres) {
   gh.getStarredFromUser({ user: req.params.user}, function(err, ghres) {
     if (err) console.log(err.stack)
