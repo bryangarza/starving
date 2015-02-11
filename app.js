@@ -2,7 +2,7 @@
 var path = require('path')
 var express = require('express')
 var app = express()
-var port = process.env.PORT || 8080
+var port = process.env.PORT || 3000
 var gh = require('./mock/githubmock.js')
 // var GithubApi = require('github')
 // var gh = new GithubApi({
