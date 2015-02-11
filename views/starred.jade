@@ -3,4 +3,7 @@ block content
   ul
     each star in stars
       li: a(href=star.html_url)
-          = star.name
+          = star.owner.login
+          |/
+          strong
+            = star.name
