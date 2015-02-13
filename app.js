@@ -58,6 +58,6 @@ app.get('/', function(req, res) {
 //   })
 // })
 
-var server = app.listen(port, function() {
-  console.log('Listening at port', server.address.port())
+app.listen(port, function() {
+  console.log('Listening...')
 })
