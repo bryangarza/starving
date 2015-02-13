@@ -1,10 +1,15 @@
 extends index
 block content
-  each star in stars
-    div.stars
-      a(href=star.owner.html_url)
-        = star.owner.login
-      = ' / '
-      a(href=star.html_url)
-        strong
-          = star.name
+  table.table.table-striped
+    tr
+      td ★
+      td user
+      td repo
+    each star in stars
+      tr
+        td
+          = star.stargazers_count
+        td
+          a(href="http://starving.co/#{star.owner.login}") #{star.owner.login}
+        td
+          a(href=star.html_url) #{star.name}

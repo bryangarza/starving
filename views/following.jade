@@ -1,3 +1,7 @@
 extends index
 block content
-  h2= user - following
+  each user in users
+    div.user
+      img(src=user.avatar_url)
+      a(href="localhost:3000/"+user.login)
+        = user.login
